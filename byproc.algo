@@ -1,0 +1,26 @@
+PROCEDURE Dot_product(vecteur1,vecteur2:ARRAY_OF INTEGER , VAR sum:INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+sum := 0;
+    FOR i FROM 0 TO vecteur1.length-1  DO
+        sum := sum +vecteur1[i]*vecteur2[i]
+    END_FOR
+END
+
+ALGORITHM orthogonal
+VAR
+    v1.v2:ARRAY_OF INTEGER [5]
+    sum:INTEGER
+BEGIN
+   REPEAT
+    Write("entrer v1 et v2")
+   UNTIL (v1.length = v2.length)
+
+   Dot_product(v1,v2,sum)
+   IF (sum=0) THEN
+    Write("v1 et v2 sont orthogoneaux")
+   ELSE
+    Write("v1 et v2 ne sont pas orthogoneaux")
+   END_IF
+END
